@@ -1,0 +1,263 @@
+{
+  "extends": [
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:react-hooks/recommended"
+  ],
+  "plugins": ["react", "deprecate", "prettier", "jsx-a11y", "unused-imports", "no-only-tests"],
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "root": true,
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/semi": ["never"],
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": [
+      "error",
+      { "functions": false, "classes": true, "variables": true }
+    ],
+    "comma-dangle": "error",
+    "no-underscore-dangle": "off",
+    "import/extensions": [
+      "error",
+      {
+        "scss": "always",
+        "json": "always"
+      }
+    ],
+    "react/require-default-props": "off",
+    "react/sort-comp": "off",
+    "react/jsx-filename-extension": 0,
+    "import/prefer-default-export": "off",
+    "import/no-cycle": 0,
+    "function-paren-newline": "off",
+    "react/jsx-indent": 0,
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["to", "hrefLeft", "hrefRight"],
+        "aspects": ["invalidHref"]
+      }
+    ],
+    "jsx-a11y/label-has-for": "off",
+    "prettier/prettier": "error",
+    "react/jsx-one-expression-per-line": 0,
+    "react/destructuring-assignment": 0,
+    "react/default-props-match-prop-types": 0,
+    "react/jsx-wrap-multilines": 0,
+    "jsx-a11y/label-has-associated-control": [
+      2,
+      {
+        "controlComponents": ["Input"],
+        "depth": 3
+      }
+    ],
+    "jsx-a11y/accessible-emoji": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "import/no-unresolved": [
+      2,
+      {
+        "ignore": ["@storybook"]
+      }
+    ],
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "deprecate/import": ["warn", { "name": "react-redux-promise-listener" }],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "off",
+    "unused-imports/no-unused-imports-ts": "error",
+    "no-only-tests/no-only-tests": "error",
+    "no-restricted-imports": ["error", "prop-types"]
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {},
+      "webpack": {
+        "config": {
+          "resolve": {
+            "alias": {
+              "$components": "src/js/components",
+              "$containers": "src/js/containers",
+              "$redux": "src/js/redux",
+              "$store": "src/store",
+              "$constants": "src/js/constants",
+              "$fixtures": "src/js/fixtures",
+              "$libs": "src/js/libs",
+              "$utils": "src/js/utils",
+              "$services": "src/js/services",
+              "$config": "src/js/config",
+              "$img": "src/img",
+              "$styles": "src/scss",
+              "$uikit": "src/ui-kit",
+              "$features": "src/features",
+              "$api": "src/js/api",
+              "$helpers": "src/helpers",
+              "$library": "src/library",
+              "$types": "src/library/types",
+              "$domains": "src/domains",
+              "$module": "src/module",
+              "$src": "src",
+              "$helper": "src/helper",
+              "$route": "src/route",
+              "$test": "src/__tests__"
+            },
+            "extensions": [".js", ".jsx", ".ts", ".tsx", ".scss", ".d.ts"],
+            "modules": ["./", "node_modules"]
+          }
+        }
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.@(js|jsx)"],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "func-names": "off",
+        "import/no-extraneous-dependencies": "off",
+        "import/order": "off",
+        "no-redeclare": "off",
+        "no-shadow": "off",
+        "prefer-object-spread": "off",
+        "react/jsx-curly-newline": "off",
+        "react/jsx-fragments": "off",
+        "react/jsx-props-no-spreading": "off",
+        "react/no-deprecated": "off",
+        "react/state-in-constructor": "off",
+        "react/static-property-placement": "off"
+      }
+    },
+    {
+      "files": ["**/*.@(ts|tsx)"],
+      "parser": "@typescript-eslint/parser",
+      "plugins": ["react", "@typescript-eslint", "prettier", "internal-rules"],
+      "rules": {
+        "internal-rules/require-type-annotation-for-saga-call": ["error"],
+        "@typescript-eslint/ban-types": "off",
+        "@typescript-eslint/camelcase": "off",
+        "camelcase": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-non-null-asserted-optional-chain": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-use-before-define": "off",
+        "import/named": "off",
+        "import/no-extraneous-dependencies": "off",
+        "import/order": "off",
+        "no-shadow": "off",
+        "prefer-object-spread": "off",
+        "react/jsx-curly-newline": "off",
+        "react/jsx-fragments": "off",
+        "react/jsx-props-no-spreading": "off",
+        "react/no-deprecated": "off",
+        "react/no-unused-prop-types": "off",
+        "react/static-property-placement": "off",
+        "react/state-in-constructor": "off"
+      },
+      "settings": {
+        "import/extensions": "allExtensions",
+        "import/parsers": {
+          "@typescript-eslint/parser": [".ts", ".tsx"]
+        },
+        "import/resolver": {
+          "webpack": {
+            "config": {
+              "resolve": {
+                "extensions": [".ts", ".tsx", ".js", ".jsx", ".scss"]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "files": ["**/*test.@(js|jsx|ts|tsx)"],
+      "env": {
+        "jest": true,
+        "node": true
+      },
+      "settings": {
+        "import/resolver": {
+          "webpack": {
+            "config": {
+              "resolve": {
+                "alias": {
+                  "$api": "src/js/api",
+                  "$components": "src/js/components",
+                  "$config": "src/js/config",
+                  "$constants": "src/js/constants",
+                  "$containers": "src/js/containers",
+                  "$domains": "src/domains",
+                  "$features": "src/features",
+                  "$fixtures": "src/js/fixtures",
+                  "$img": "src/img",
+                  "$libs": "src/js/libs",
+                  "$library": "src/library",
+                  "$module": "src/module",
+                  "$redux": "src/js/redux",
+                  "$src": "src",
+                  "$store": "src/store",
+                  "$styles": "src/scss",
+                  "$utils": "src/js/utils",
+                  "$test": "__tests__",
+                  "components": "src/js/components",
+                  "config": "src/js/config",
+                  "constants": "src/js/constants",
+                  "containers": "src/js/containers",
+                  "fixtures": "src/js/fixtures",
+                  "img": "src/img",
+                  "libs": "src/js/libs",
+                  "redux": "src/js/redux",
+                  "styles": "src/scss",
+                  "utils": "src/js/utils"
+                },
+                "extensions": [".js", ".jsx", ".scss", ".ts", ".tsx"],
+                "modules": ["./", "node_modules"]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "files": ["stories/**/*.@(js|jsx)"],
+      "rules": {
+        "import/no-extraneous-dependencies": "off"
+      }
+    },
+    {
+      "files": ["postcss.config.js", "webpack.config.js"],
+      "env": {
+        "node": true
+      },
+      "rules": {
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": true
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.tsx"],
+      "rules": {
+        "react/prop-types": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+.nav {
+  display: grid;
+  grid-template-columns: max-content;
+  grid-template: 20% 60% 20%;
+}
+
+.navLink {
+  
+}
