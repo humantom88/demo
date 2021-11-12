@@ -1,0 +1,22 @@
+.nav {
+  display: grid;
+  grid-template-columns: 20% 80% 20%;
+  background-color: black;
+  padding: 1rem 2rem;
+}
+
+.nav > img {
+  display: inline-block;
+  max-width: 14rem;
+}
+
+.nav > ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navLink {
+  padding: 0.5rem 0.8rem;
+}
