@@ -1,4 +1,5 @@
 const path = require('path');
+const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -9,7 +10,7 @@ module.exports = {
     alias: {
       components: path.resolve(__dirname, 'src/components'),
     },
-    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.css'],
   },
   module: {
     rules: [
@@ -32,6 +33,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Production',
       template: './src/index.html'
+    }),
+    new CopyPlugin({
+      patterns: [{ from: "./src/assets", to: "assets" }],
     }),
   ],
   output: {
