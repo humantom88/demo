@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+
 import { Image, ImageName } from '../Image/index'
 import { NavLink } from './index'
 
@@ -10,13 +11,16 @@ interface NavigationProps {
 
 export const Navigation: FC<NavigationProps> = ({ links }: NavigationProps) => (
   <nav className={style.nav}>
-    <Image name={ImageName.logo} />
+    <NavLink to={'/'}>
+      <Image name={ImageName.logo} />
+    </NavLink>
     <ul>
       {Object.entries(links).map(([name, path]: [string, string]) => (
         <li key={name} className={style.nav}>
-          <NavLink to={path}>{name}</NavLink>
+          <NavLink className={style.navLink} to={path}>{name}</NavLink>
         </li>
       ))}
     </ul>
+    <div>Stuff</div>
   </nav>
 )

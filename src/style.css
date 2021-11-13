@@ -1,4 +1,10 @@
+@font-face {
+  font-family: 'Cyberpunk';
+  src: url('assets/fonts/Cyberpunk.ttf');
+}
+
 html {
+  font-family: 'Cyberpunk';
   font-size: 16px;
 }
 

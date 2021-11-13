@@ -1,11 +1,12 @@
 .nav {
   display: grid;
-  grid-template-columns: 20% 80% 20%;
+  grid-template-columns: 15% 70% 15%;
   background-color: black;
   padding: 1rem 2rem;
+  align-items: center;
 }
 
-.nav > img {
+.nav > a > img {
   display: inline-block;
   max-width: 14rem;
 }
@@ -19,4 +20,5 @@
 
 .navLink {
   padding: 0.5rem 0.8rem;
+  font-size: 1.4rem;
 }
