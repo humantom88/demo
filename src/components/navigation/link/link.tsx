@@ -1,6 +1,6 @@
 import React from 'react'
-import classnames from '../../../../node_modules/classnames/index'
-import { Link, LinkProps } from '../../../../node_modules/react-router-dom/index'
+import classnames from 'classnames'
+import { Link, LinkProps } from 'react-router-dom'
 
 import style from './link.style.css'
 

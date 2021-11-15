@@ -7,7 +7,7 @@ module.exports = {
     app: './src/index.tsx'
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
   module: {
     rules: [
@@ -24,8 +24,7 @@ module.exports = {
         ]
       },
       { test: /\.(ts|tsx)$/, use: 'ts-loader' }
-    ],
-    
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
