@@ -1,0 +1,7 @@
+.panel {
+  background-color: #ee3127;
+  color: white;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  padding: 1rem;
+}
