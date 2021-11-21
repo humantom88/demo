@@ -1,3 +1,8 @@
 import React from 'react'
+import { Outlet } from 'react-router'
 
-export const Main: React.FC = ({ children }) => <div>{children}</div>
+export const Main: React.FC = () => (
+  <div>
+    <Outlet />
+  </div>
+)

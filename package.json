@@ -24,6 +24,7 @@
   "devDependencies": {
     "@types/react": "^17.0.21",
     "@types/react-dom": "^17.0.9",
+    "@types/react-router": "^5.1.17",
     "copy-webpack-plugin": "^9.1.0",
     "css-loader": "^6.5.1",
     "html-webpack-plugin": "^5.3.2",
