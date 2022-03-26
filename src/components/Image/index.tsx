@@ -1,15 +1,16 @@
-import React, { FC } from 'react'
+import React, { FC } from 'react';
 
 export enum ImageName {
-  logo = 'logo.png'
+  logo = 'logo.png',
+  fakeAvatar = 'fake-avatar.png'
 }
 
-const DEFAULT_PATH = 'assets'
+const DEFAULT_PATH = 'assets';
 
 export interface ImageProps {
-  name: ImageName
+  name: ImageName;
 }
 
 export const Image: FC<ImageProps> = ({ name }: ImageProps) => (
   <img src={`${DEFAULT_PATH}/${name}`} />
-)
+);

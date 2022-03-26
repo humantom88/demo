@@ -1,43 +1,29 @@
 import React from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 
-import { Navigation } from './components/navigation/navigation'
-
 import { About } from './pages/about'
 import { Agent } from './pages/agent/agent'
-import { Main } from './pages/main'
+import { Layout } from './pages/layout'
 import { PageNotFoundView } from './pages/page-not-found'
+// import { Main } from './pages/main'
 
-import {
-  LINK_ABOUT,
-  LINK_AGENT,
-  LINK_MAIN,
-  PATH_ABOUT,
-  PATH_AGENT,
-  PATH_MAIN
-} from './pages/constants'
-import { PageContainer } from './components/containers/page-container/page-container'
+import { QueryClient, QueryClientProvider } from 'react-query'
 
-const navigationMap = {
-  [LINK_MAIN]: `${PATH_MAIN}`,
-  [LINK_AGENT]: `${PATH_AGENT}`,
-  [LINK_ABOUT]: `${PATH_ABOUT}`
-}
+const queryClient = new QueryClient()
 
 export const App: React.FC = (): JSX.Element => {
   return (
-    <div>
-      <Navigation links={navigationMap} />
-      <PageContainer>
-        <Routes>
-          <Route path="/" element={<Main />}>
-            <Route path="/agent" element={<Agent />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/404" element={<PageNotFoundView />} />
-          </Route>
+    <QueryClientProvider client={queryClient}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          {/* <Route index element={<Main />} /> */}
+          {/* <Route path="agent" element={<Agent />} /> */}
+          <Route path="/" element={<Agent />} />
+          <Route path="about" element={<About />} />
+          <Route path="404" element={<PageNotFoundView />} />
           <Route path="*" element={<Navigate to="/404" />} />
-        </Routes>
-      </PageContainer>
-    </div>
+        </Route>
+      </Routes>
+    </QueryClientProvider>
   )
 }

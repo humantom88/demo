@@ -1,8 +1,5 @@
 import React from 'react'
-import { Outlet } from 'react-router'
 
-export const Main: React.FC = () => (
-  <div>
-    <Outlet />
-  </div>
-)
+export const Main: React.FC = () => {
+  return <div>Main Page</div>
+}
