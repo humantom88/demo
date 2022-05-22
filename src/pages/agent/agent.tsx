@@ -1,21 +1,10 @@
 import React, { ChangeEvent, useCallback, useState } from 'react';
 
 import { Panel } from '../../components/containers/panel.styled';
-import { Skills } from './components/skills';
 import { CharacterClass, useCharacters } from '../../__data__/queries/character.query';
-import { StyledProfileTopContainer } from './agent.styled';
-import {
-  StyledAgentContainer,
-  StyledArmorContainer,
-  StyledWeaponsContainer,
-  StyledImplantsContainer,
-  StyledEquipmentContainer,
-  StyledStoryContainer,
-  StyledAvatarContainer,
-  StyledStatsContainer,
-  StyledCharacterName
-} from './agent.styled';
 import { Image, ImageName } from '../../components/Image';
+import { StyledAgentForm } from './agent.styled';
+import { StyledAgentContainer, StyledAvatarContainer, StyledCharacterName } from './agent.styled';
 
 const profileTitle = 'Имя:';
 const profileClass = 'Класс:';
@@ -39,40 +28,30 @@ export const Agent = () => {
   return (
     <StyledAgentContainer>
       <Panel>
+        <StyledAvatarContainer>
+          <Image name={ImageName.fakeAvatar} />
+        </StyledAvatarContainer>
         <form>
-          <div>
-            <StyledProfileTopContainer>
-              <StyledAvatarContainer>
-                <Image name={ImageName.fakeAvatar} />
-              </StyledAvatarContainer>
-              <StyledStatsContainer>
-                <StyledCharacterName>
-                  <h2>{profileTitle}</h2>
-                  <input placeholder={profileTitlePlaceholder} name="characterName" />
-                  {data && (
-                    <>
-                      <h2>{profileClass}</h2>
-                      <select placeholder={profileTitlePlaceholder} onChange={handleChangeClass}>
-                        <option value="" disabled selected>
-                          {profileClassPlaceholder}
-                        </option>
-                        {data.characters.map((character) => (
-                          <option value={character.id}>{character.name}</option>
-                        ))}
-                      </select>
-                    </>
-                  )}
-                </StyledCharacterName>
-                {selectedCharacterClass && <p>{selectedCharacterClass.description}</p>}
-                <Skills />
-              </StyledStatsContainer>
-            </StyledProfileTopContainer>
-          </div>
-          <StyledArmorContainer>StyledArmorContainer</StyledArmorContainer>
-          <StyledWeaponsContainer>StyledWeaponsContainer</StyledWeaponsContainer>
-          <StyledImplantsContainer>StyledImplantsContainer</StyledImplantsContainer>
-          <StyledEquipmentContainer>StyledEquipmentContainer</StyledEquipmentContainer>
-          <StyledStoryContainer>StyledStoryContainer</StyledStoryContainer>
+          <StyledAgentForm>
+            <StyledCharacterName>
+              <h2>{profileTitle}</h2>
+              <input placeholder={profileTitlePlaceholder} name="characterName" />
+              {data && (
+                <>
+                  <h2>{profileClass}</h2>
+                  <select placeholder={profileTitlePlaceholder} onChange={handleChangeClass}>
+                    <option value="" disabled selected>
+                      {profileClassPlaceholder}
+                    </option>
+                    {data.characters.map((character) => (
+                      <option value={character.id}>{character.name}</option>
+                    ))}
+                  </select>
+                </>
+              )}
+            </StyledCharacterName>
+            <div>⚄</div>
+          </StyledAgentForm>
         </form>
       </Panel>
     </StyledAgentContainer>

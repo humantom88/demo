@@ -7,7 +7,7 @@ export const StyledProfileTopContainer = styled.div`
 `;
 
 export const StyledAgentContainer = styled.div`
-  min-width: 90%;
+  min-width: 100%;
 `;
 
 export const StyledArmorContainer = styled.div`
@@ -31,7 +31,6 @@ export const StyledStoryContainer = styled.div`
 `;
 
 export const StyledAvatarContainer = styled.div`
-  margin: 4px 4px 4px;
   img {
     max-width: 180px;
   }
@@ -43,8 +42,28 @@ export const StyledStatsContainer = styled.div`
   margin: 12px;
 `;
 
-export const StyledCharacterName = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin: 8px 0;
+export const StyledCharacterName = styled.div`  
+  margin: 0.5rem 0;
+
+  h2 {
+    display: inline-block;
+    margin: 0 12px 0 0;
+    text-align: left;
+  }
+
+  input, select {
+    min-width: 12rem;
+    font-size: 1rem;
+    padding: 8px 12px;
+    margin-right: 12px;
+  }
+`;
+
+export const StyledAgentForm = styled.div`
+  display: block;
+`;
+
+export const StyledClassDescription = styled.div`
+  display: inline-block;
+  font-size: 1rem;
 `;
